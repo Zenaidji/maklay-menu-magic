@@ -13,15 +13,15 @@ const MenuFooter = () => {
       <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <Phone className="w-4 h-4 text-primary" />
-          <span>+213 XXX XXX XXX</span>
+          <span>0561 10 10 01</span>
         </div>
         <div className="flex items-center gap-2">
           <MapPin className="w-4 h-4 text-primary" />
-          <span>Adresse du restaurant</span>
+          <span>Ferhoune, Akfadou, Béjaïa</span>
         </div>
         <div className="flex items-center gap-2">
           <Clock className="w-4 h-4 text-primary" />
-          <span>10h - 23h</span>
+          <span>07h30 - 00h00</span>
         </div>
       </div>
       

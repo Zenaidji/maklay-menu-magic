@@ -1,4 +1,4 @@
-import { Pizza, Sandwich, Wind, Coffee, Printer } from "lucide-react";
+import { Pizza, Sandwich, Wind, Coffee, Printer, Download } from "lucide-react";
 import MenuHeader from "@/components/menu/MenuHeader";
 import MenuSection from "@/components/menu/MenuSection";
 import MenuItem from "@/components/menu/MenuItem";
@@ -10,16 +10,28 @@ const Index = () => {
     window.print();
   };
 
+  const handleDownload = () => {
+    window.print();
+  };
+
   return (
     <div className="min-h-screen bg-background py-8 px-4">
       {/* Print Button */}
-      <div className="no-print max-w-3xl mx-auto mb-6 flex justify-center">
+      <div className="no-print max-w-3xl mx-auto mb-6 flex justify-center gap-4">
         <Button 
           onClick={handlePrint}
           className="bg-primary hover:bg-terracotta-dark text-primary-foreground gap-2"
         >
           <Printer className="w-4 h-4" />
           Imprimer le menu
+        </Button>
+        <Button 
+          onClick={handleDownload}
+          variant="outline"
+          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2"
+        >
+          <Download className="w-4 h-4" />
+          Télécharger le menu
         </Button>
       </div>
 
@@ -61,7 +73,7 @@ const Index = () => {
             price="300 DA"
           />
           <MenuItem
-            name="SP-MZ Spéciale"
+            name="Spéciale Maison"
             description="Gruyère, cheddar, fromage rouge, viande hachée, champignon, escalope"
             sizes={[
               { size: "M", price: "400 DA" },
@@ -101,7 +113,7 @@ const Index = () => {
             description="Fromage, cheddar, gruyère, merguez, escalope"
             sizes={[
               { size: "L", price: "150 DA" },
-              { size: "XL", price: "250 DA" },
+              { size: "XL Maison", price: "200 DA" },
             ]}
           />
           <MenuItem
@@ -122,8 +134,7 @@ const Index = () => {
           <MenuItem name="Infusion Thé" price="40 DA" />
           <MenuItem name="Thé Maison" price="40 DA" />
           <MenuItem 
-            name="Thé Zenjabil" 
-            description="Au gingembre frais"
+            name="Thé Gingembre" 
             price="40 DA" 
           />
         </MenuSection>
