@@ -10,7 +10,7 @@ const MenuHeader = () => {
         Maklay
       </h1>
       <p className="text-xl text-muted-foreground font-light tracking-wide">
-        Pizzeria Artisanale
+        Fastfood Pizzeria
       </p>
       <div className="flex justify-center items-center gap-4 mt-6">
         <span className="h-px w-12 bg-primary/30" />
