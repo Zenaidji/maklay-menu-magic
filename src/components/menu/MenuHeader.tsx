@@ -1,14 +1,12 @@
-import { Pizza } from "lucide-react";
-
 const MenuHeader = () => {
   return (
     <header className="text-center py-12 px-6 border-b-2 border-primary/20">
       <div className="flex justify-center mb-4">
-        <div className="p-4 rounded-full bg-primary/10">
-          <Pizza className="w-12 h-12 text-primary" />
+        <div className="text-7xl md:text-8xl font-bold text-gold drop-shadow-lg" style={{ fontFamily: 'Arial Black, sans-serif' }}>
+          M
         </div>
       </div>
-      <h1 className="font-display text-5xl md:text-6xl font-bold text-charcoal tracking-tight mb-3">
+      <h1 className="font-display text-5xl md:text-6xl font-bold text-gold tracking-tight mb-3 drop-shadow-sm">
         Maklay
       </h1>
       <p className="text-xl text-muted-foreground font-light tracking-wide">
