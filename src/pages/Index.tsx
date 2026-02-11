@@ -1,9 +1,9 @@
-import { Pizza, Sandwich, Wind, Coffee, Printer, Download } from "lucide-react";
 import MenuHeader from "@/components/menu/MenuHeader";
 import MenuSection from "@/components/menu/MenuSection";
 import MenuItem from "@/components/menu/MenuItem";
 import MenuFooter from "@/components/menu/MenuFooter";
 import { Button } from "@/components/ui/button";
+import { Printer, Download } from "lucide-react";
 
 const Index = () => {
   const handlePrint = () => {
@@ -16,16 +16,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background py-8 px-4">
-      {/* Print Button */}
+      {/* Print / Download Buttons */}
       <div className="no-print max-w-3xl mx-auto mb-6 flex justify-center gap-4">
-        <Button 
+        <Button
           onClick={handlePrint}
           className="bg-primary hover:bg-terracotta-dark text-primary-foreground gap-2"
         >
           <Printer className="w-4 h-4" />
           Imprimer le menu
         </Button>
-        <Button 
+        <Button
           onClick={handleDownload}
           variant="outline"
           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2"
@@ -40,18 +40,19 @@ const Index = () => {
         <MenuHeader />
 
         {/* Pizzas Section */}
-        <MenuSection title="Nos Pizzas" icon={Pizza}>
+        <MenuSection title="Nos Pizzas" image="public/images/pizza.png">
           <MenuItem
-            name="Mega-Pizza Spéciale Maison"
-            description="Notre création signature avec les meilleurs ingrédients"
+            name="Pizza Spéciale Maison"
+            description="Notre création les ingrédients maison"
             sizes={[
-              { size: "Mega", price: "1200 DA" },
-              { size: "Medium", price: "600 DA" },
+              { size: "XL", price: "1200 DA" },
+              { size: "L", price: "600 DA" },
+              { size: "M", price: "400 DA" },
             ]}
           />
           <MenuItem
             name="Pizza Mexicaine"
-            description="Merguez, escalope, piment, champignon, fromage rouge, cheddar"
+            description="Merguez, escalope, piment, champignon, Fromage rouge, Cheddar"
             sizes={[
               { size: "M", price: "400 DA" },
               { size: "L", price: "600 DA" },
@@ -60,7 +61,7 @@ const Index = () => {
           />
           <MenuItem
             name="Pizza Thon Fromage"
-            description="Thon, fromage cheddar, cornichon, câpres"
+            description="Thon, cheddar, cornichon, câpres"
             sizes={[
               { size: "M", price: "300 DA" },
               { size: "L", price: "500 DA" },
@@ -69,15 +70,31 @@ const Index = () => {
           />
           <MenuItem
             name="Pizza Margarita"
-            description="Sauce tomate, mozzarella, basilic frais"
-            price="300 DA"
+            description="Sauce tomate, Fromage , légumes frais"
+            sizes={[
+              { size: "M", price: "300 DA" },
+              { size: "L", price: "550 DA" },
+              { size: "XL", price: "750 DA" },
+            ]}
           />
+
           <MenuItem
-            name="Spéciale Maison"
-            description="Gruyère, cheddar, fromage rouge, viande hachée, champignon, escalope"
+            name="Pizza Carnivore"
+            description="Sauce tomate,cheddar,fromage rouge, Poulet, Merguez, viande hachée"
             sizes={[
               { size: "M", price: "400 DA" },
               { size: "L", price: "600 DA" },
+              { size: "XL", price: "1200 DA" },
+            ]}
+          />
+
+          <MenuItem
+            name="Pizza 3 Fromages"
+            description="Sauce tomate,Cheddar,Fromage rouge,Fromage fondu "
+            sizes={[
+              { size: "M", price: "300 DA" },
+              { size: "L", price: "550 DA" },
+              { size: "XL", price: "750 DA" },
             ]}
           />
         </MenuSection>
@@ -85,9 +102,9 @@ const Index = () => {
         <div className="decorative-line my-4" />
 
         {/* Sandwiches Section */}
-        <MenuSection title="Sandwiches" icon={Sandwich}>
+        <MenuSection title="Sandwiches" image="public/images/sandwich.png">
           <MenuItem
-            name="Spécial Maison"
+            name=" Sandwich Spécial Maison"
             description="Notre sandwich signature garni généreusement"
             sizes={[
               { size: "L", price: "300 DA" },
@@ -107,36 +124,33 @@ const Index = () => {
         <div className="decorative-line my-4" />
 
         {/* Soufflés Section */}
-        <MenuSection title="Soufflés" icon={Wind}>
+        <MenuSection title="Soufflés" image="public/images/souffle.png">
           <MenuItem
-            name="Soufflé Spécial"
+            name=" Soufflé spécial maison"
             description="Fromage, cheddar, gruyère, merguez, escalope"
             sizes={[
               { size: "L", price: "150 DA" },
-              { size: "XL Maison", price: "200 DA" },
+              { size: "XL", price: "200 DA" },
             ]}
           />
           <MenuItem
-            name="Soufflé Nature"
-            description="Fromage fondu"
+            name=" Soufflé 3 Fromages"
+            description="Fromage fondu, Cheddar, Gruyère"
             price="100 DA"
           />
         </MenuSection>
 
         <div className="decorative-line my-4" />
 
-        {/* Hot Drinks Section */}
-        <MenuSection title="Boissons Chaudes" icon={Coffee}>
+        {/* Boissons Chaudes Section */}
+        <MenuSection title="Boissons Chaudes" image="public/images/coffee.png">
           <MenuItem name="Café Capsule" price="70 DA" />
-          <MenuItem name="Good Coffee" price="50 DA" />
+          <MenuItem name="Best Coffee" price="50 DA" />
+          <MenuItem name="Café classic" price="30 DA" />
           <MenuItem name="Café Crème" price="50 DA" />
-          <MenuItem name="Café Basic" price="30 DA" />
           <MenuItem name="Infusion Thé" price="40 DA" />
           <MenuItem name="Thé Maison" price="40 DA" />
-          <MenuItem 
-            name="Thé Gingembre" 
-            price="40 DA" 
-          />
+          <MenuItem name="Gingembre" price="40 DA" />
         </MenuSection>
 
         <MenuFooter />

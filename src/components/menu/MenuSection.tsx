@@ -3,28 +3,33 @@ import { LucideIcon } from "lucide-react";
 
 interface MenuSectionProps {
   title: string;
-  icon?: LucideIcon;
-  children: ReactNode;
+  icon?: React.ElementType;
+  image?: string;
+  children: React.ReactNode;
 }
 
-const MenuSection = ({ title, icon: Icon, children }: MenuSectionProps) => {
+const MenuSection = ({
+  title,
+  icon: Icon,
+  image,
+  children,
+}: MenuSectionProps) => {
   return (
-    <section className="py-8 animate-fade-in">
-      <div className="flex items-center gap-3 mb-6">
-        {Icon && (
-          <div className="p-2 rounded-lg bg-primary/10">
-            <Icon className="w-5 h-5 text-primary" />
-          </div>
-        )}
-        <h2 className="section-title font-display text-2xl md:text-3xl font-semibold text-charcoal">
-          {title}
-        </h2>
+    <section className="my-8">
+      <div className="flex items-center gap-3 mb-4">
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="h-40 w-40 md:h-42 md:w-42 object-contain"
+          />
+        ) : Icon ? (
+          <Icon className="w-12 h-12 md:w-14 md:h-14 text-primary" />
+        ) : null}
+        <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
       </div>
-      <div className="space-y-1">
-        {children}
-      </div>
+      <div>{children}</div>
     </section>
   );
 };
-
 export default MenuSection;

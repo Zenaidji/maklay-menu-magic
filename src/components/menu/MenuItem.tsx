@@ -25,18 +25,20 @@ const MenuItem = ({ name, description, price, sizes }: MenuItemProps) => {
           )}
         </div>
         {price && !sizes && (
-          <span className="price-tag text-lg whitespace-nowrap">
-            {price}
-          </span>
+          <span className="price-tag text-lg whitespace-nowrap">{price}</span>
         )}
       </div>
-      
+
       {sizes && sizes.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-3">
           {sizes.map((variant, index) => (
             <div key={index} className="size-badge flex items-center gap-2">
-              <span className="font-semibold text-charcoal">{variant.size}</span>
-              <span className="text-primary font-semibold">{variant.price}</span>
+              <span className="font-semibold text-charcoal">
+                {variant.size}
+              </span>
+              <span className="text-primary font-semibold">
+                {variant.price}
+              </span>
             </div>
           ))}
         </div>
